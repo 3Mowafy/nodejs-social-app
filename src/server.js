@@ -10,11 +10,7 @@ require("../db/connect");
 server.use(express.static(path.join(__dirname, "../public")));
 server.use(express.urlencoded({ extended: true }));
 server.use(express.json());
-server.use(
-    cors({
-        origin: "*",
-    })
-);
+server.use(cors());
 
 const postRouter = require("../routes/posts.route");
 
